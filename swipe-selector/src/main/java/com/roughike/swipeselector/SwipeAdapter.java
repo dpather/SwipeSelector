@@ -164,16 +164,16 @@ class SwipeAdapter extends PagerAdapter implements View.OnClickListener, ViewPag
         }
     }
 
-    Bundle onSaveInstanceState() {
-        Bundle bundle = new Bundle();
-        bundle.putInt(STATE_CURRENT_POSITION, currentPosition);
-        return bundle;
-    }
-
-    void onRestoreInstanceState(Bundle state) {
-        viewPager.setCurrentItem(state.getInt(STATE_CURRENT_POSITION), false);
-        notifyDataSetChanged();
-    }
+//    Bundle onSaveInstanceState() {
+//        Bundle bundle = new Bundle();
+//        bundle.putInt(STATE_CURRENT_POSITION, currentPosition);
+//        return bundle;
+//    }
+//
+//    void onRestoreInstanceState(Bundle state) {
+//        viewPager.setCurrentItem(state.getInt(STATE_CURRENT_POSITION), false);
+//        notifyDataSetChanged();
+//    }
 
     /**
      * Override methods / listeners

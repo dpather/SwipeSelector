@@ -265,30 +265,38 @@ public class SwipeSelector extends FrameLayout {
         adapter.selectItemWithValue(value, animate);
     }
 
-    @Override
-    public Parcelable onSaveInstanceState() {
-        Bundle bundle = adapter.onSaveInstanceState();
-        bundle.putParcelable(STATE_SELECTOR, super.onSaveInstanceState());
-        return bundle;
+//    @Override
+//    public Parcelable onSaveInstanceState() {
+//        Bundle bundle = adapter.onSaveInstanceState();
+//        bundle.putParcelable(STATE_SELECTOR, super.onSaveInstanceState());
+//        return bundle;
+//    }
+//
+//    @Override
+//    public void onRestoreInstanceState(Parcelable state) {
+//        if (state instanceof Bundle) {//Shouldn't be needed, just in case
+//            Bundle bundle = (Bundle) state;
+//            adapter.onRestoreInstanceState(bundle);
+//            state = bundle.getParcelable(STATE_SELECTOR);
+//        }
+//        super.onRestoreInstanceState(state);
+//    }
+//
+//    @Override
+//    protected void dispatchSaveInstanceState(SparseArray<Parcelable> container) {
+//        dispatchFreezeSelfOnly(container);
+//    }
+//
+//    @Override
+//    protected void dispatchRestoreInstanceState(SparseArray<Parcelable> container) {
+//        dispatchThawSelfOnly(container);
+//    }
+
+    public SwipeAdapter getAdapter() {
+        return adapter;
     }
 
-    @Override
-    public void onRestoreInstanceState(Parcelable state) {
-        if (state instanceof Bundle) {//Shouldn't be needed, just in case
-            Bundle bundle = (Bundle) state;
-            adapter.onRestoreInstanceState(bundle);
-            state = bundle.getParcelable(STATE_SELECTOR);
-        }
-        super.onRestoreInstanceState(state);
-    }
-
-    @Override
-    protected void dispatchSaveInstanceState(SparseArray<Parcelable> container) {
-        dispatchFreezeSelfOnly(container);
-    }
-
-    @Override
-    protected void dispatchRestoreInstanceState(SparseArray<Parcelable> container) {
-        dispatchThawSelfOnly(container);
+    public ViewPager getPager() {
+        return pager;
     }
 }
